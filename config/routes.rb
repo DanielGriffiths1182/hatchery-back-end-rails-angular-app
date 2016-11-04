@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :users
 
+  root to: '/'
+  
   get '/user'  => 'users#new'
 
   post '/user'  => 'users#create'
