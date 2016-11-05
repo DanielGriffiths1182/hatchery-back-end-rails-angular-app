@@ -19,6 +19,13 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(session[:user_id])
+    @user.username = params[:user][:username]
+    @user.password = params[:user][:password]
+    @user.save
+  end
+
   def login
     @user = User.find_by(username: params[:username])
     if !@user.nil?

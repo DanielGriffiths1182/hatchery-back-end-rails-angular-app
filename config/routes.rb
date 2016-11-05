@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   post '/user'  => 'users#create'
 
+  put '/user' => 'users#edit'
+
   post '/create' => 'eggs#create'
 
   get '/show' => 'eggs#show'
