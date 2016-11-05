@@ -19,6 +19,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def login
+    @user = User.find_by(username: params[:username])
+    if !@user.nil?
+      render_user
+    else
+      status 400
+    end
+  end
+
   private
   def user_params
     params.require("users").permit(:username, :email, :password)
