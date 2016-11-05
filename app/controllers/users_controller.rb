@@ -20,8 +20,12 @@ class UsersController < ApplicationController
   end
 
   def login
-    @user = User.find(params[:username, :password])
-    render_user
+    @user = User.find_by(username: params[:username])
+    if !@user.nil?
+      render_user
+    else
+      status 400
+    end
   end
 
   private
