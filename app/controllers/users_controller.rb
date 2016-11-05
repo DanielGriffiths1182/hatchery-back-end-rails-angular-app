@@ -21,8 +21,7 @@ class UsersController < ApplicationController
 
   def login
     @user = User.find(params[:username, :password])
-    @user.username = params[:user][:username]
-    @user.save
+    render_user
   end
 
   private
