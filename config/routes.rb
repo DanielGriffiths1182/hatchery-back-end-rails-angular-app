@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   get '/show' => 'eggs#show'
 
   put '/edit' => 'eggs#update'
+
+  get '/weather' => 'eggs#weather'
 end

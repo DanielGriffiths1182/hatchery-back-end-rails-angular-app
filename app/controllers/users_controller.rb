@@ -13,7 +13,12 @@ class UsersController < ApplicationController
       generate_user(false)
     end
     if @user.save
-      render 'show.json.jbuilder', status: :created, location: @user
+      render json: {
+        id: @user.id,
+        username: @user.username,
+        email: @user.email,
+        admin: @user.admin
+      }
     else
       render_error @user.errors.full_message
     end
