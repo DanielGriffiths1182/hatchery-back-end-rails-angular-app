@@ -13,12 +13,7 @@ class UsersController < ApplicationController
       generate_user(false)
     end
     if @user.save
-      render json: {
-        id: @user.id,
-        username: @user.username,
-        email: @user.email,
-        admin: @user.admin
-      }
+      render_user
     else
       render_error @user.errors.full_message
     end
@@ -36,5 +31,14 @@ class UsersController < ApplicationController
       password: params[:password],
       admin: admin_status
     )
+  end
+
+  def render_user
+    render json: {
+      id: @user.id,
+      username: @user.username,
+      email: @user.email,
+      admin: @user.admin
+    }
   end
 end
