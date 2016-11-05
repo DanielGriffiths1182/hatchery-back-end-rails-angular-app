@@ -10,8 +10,6 @@ Rails.application.routes.draw do
 
   put '/user' => 'users#edit'
 
-  # post '/create' => 'eggs#create'
-
   get '/show' => 'eggs#show'
 
   put '/edit' => 'eggs#update'

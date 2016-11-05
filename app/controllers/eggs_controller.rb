@@ -1,14 +1,4 @@
 class EggsController < ApplicationController
-  # def create
-  #   @egg = Egg.new(total: params[:input].to_i)
-  #   if @egg.save
-  #     result = { total: @egg.total }
-  #     render json: result
-  #   else
-  #     render json: {}
-  #   end
-  # end
-
   def show
     @egg = Egg.where(id: 1).first
     inventory = { total: @egg.total }
