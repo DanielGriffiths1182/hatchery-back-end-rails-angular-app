@@ -11,8 +11,7 @@ class EggsController < ApplicationController
 
   def show
     @egg = Egg.where(id: 1).first
-    inventory = {}
-    inventory[:total] = @egg.total
+    inventory = { total: @egg.total }
     render json: inventory
   end
 
