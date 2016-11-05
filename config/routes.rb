@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :users
   root 'users#show'
 
+  get '/login' => 'users#login'
+
   get '/user'  => 'users#new'
 
   post '/user'  => 'users#create'
