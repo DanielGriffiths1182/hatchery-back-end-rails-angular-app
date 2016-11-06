@@ -10,11 +10,7 @@ class EggsController < ApplicationController
       @egg = Egg.where(id: 1).first
       @egg.total = @egg.total + params[:input].to_i
       @egg.save
-      edited = {
-        total: @egg.total,
-        user_eggs: 0
-      }
-      render json: edited
+      render json: @egg
     else
       @egg.total = @egg.total - params[:input].to_i
       if @egg.user_eggs != Integer
@@ -24,11 +20,7 @@ class EggsController < ApplicationController
         @egg.user_eggs + params[:input].to_i
         @egg.save
       end
-      edited = {
-        total: @egg.total,
-        user_eggs: 0
-      }
-      render json: edited
+      render json: @egg
     end
   end
 
