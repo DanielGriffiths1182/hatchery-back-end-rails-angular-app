@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       generate_user(false)
     end
     if @user.save
-      render :create
+      render :json => @user
     else
       render_error @user.errors.full_message
     end
