@@ -6,22 +6,10 @@ class EggsController < ApplicationController
   end
 
   def update
-    if current_user.admin true
-      @egg = Egg.where(id: 1).first
-      @egg.total = @egg.total + params[:input].to_i
-      @egg.save
-      render json: @egg
-    else
-      @egg.total = @egg.total - params[:input].to_i
-      if @egg.user_eggs != Integer
-        @egg.user_eggs = params[:input].to_i
-        @egg.save
-      elsif
-        @egg.user_eggs + params[:input].to_i
-        @egg.save
-      end
-      render json: @egg
-    end
+    @egg = Egg.where(id: 1).first
+    @egg.total = @egg.total + params[:input].to_i
+    @egg.save
+    render json: @egg
   end
 
   def weather

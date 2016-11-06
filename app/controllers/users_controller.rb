@@ -20,9 +20,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(session[:user_id])
-    @user.username = params[:user][:username]
-    @user.password = params[:user][:password]
+    @user = User.find(params[:id])
+    @user.username = params[:username]
+    @user.password = params[:password]
     @user.save
   end
 
