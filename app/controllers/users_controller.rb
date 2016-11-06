@@ -27,9 +27,9 @@ class UsersController < ApplicationController
   end
 
   def login
-    @user = User.find_by(username: params[:user])
+    @user = User.find_by(username: params[:username])
     if !@user.nil?
-      render :create
+      render :login
     end
   end
 
