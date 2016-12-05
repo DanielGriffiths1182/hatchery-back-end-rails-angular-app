@@ -1,23 +1,8 @@
+Weekend Homework
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hatchery is a Rails 5 API for a hypothetical farmer who has eggs to tally and give away to his friends.
 
-Things you may want to cover:
+Accessing the WeatherUnderground API for current weather updates, the farmers customers
+are able to check in on how his chickens are doing.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Hatchery enables this farmers friends to select any amount of eggs out of those available.
